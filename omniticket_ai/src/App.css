@@ -20,22 +20,21 @@
 body {
   margin: 0;
   font-family: var(--font-primary);
-  background: linear-gradient(110deg, var(--background), var(--background-alt) 80%);
+  background: linear-gradient(107deg, var(--background) 65%, var(--background-alt) 100%);
   color: var(--text-main);
   font-size: 16.5px;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  transition: background 0.4s;
+  transition: background 0.4s, color 0.36s;
 }
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Slight frosted glass effect for elevation */
-  background: rgba(255,255,255,0.75);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
