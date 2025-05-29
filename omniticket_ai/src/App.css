@@ -39,20 +39,20 @@ body {
 }
 
 .navbar {
-  background: linear-gradient(105deg, var(--primary), #4263be 85%);
+  background: linear-gradient(107deg, var(--secondary) 85%, #3c1d00 100%);
   color: #fff;
   padding: 16px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid var(--secondary);
+  border-bottom: 4px solid var(--primary);
   position: fixed;
   top: 0;
   width: 100vw;
   min-height: 61px;
   box-sizing: border-box;
   z-index: 100;
-  box-shadow: 0 2.5px 18px 0 rgba(55,114,255, 0.10);
+  box-shadow: 0 3px 18px 0 #FF76003F;
   transition: background 0.35s;
 }
 
