@@ -3,16 +3,17 @@ import "./MainContainer.css";
 
 /**
  * PUBLIC_INTERFACE
- * MainContainer: Vertical navigation bar with modern SVG icon buttons for each domain.
+ * MainContainer: Arranges main features as separate, professional sections with clear visual distinction.
  */
 function MainContainer() {
-  // Dummy state logic/skipped for now, as placeholder is sufficient
   return (
     <div className="main-container vertical-layout">
       {/* Side Vertical Navigation */}
       <nav className="vertical-nav" aria-label="Domain Navigation">
         <div className="nav-brand">
-          <span role="img" aria-label="Logo" className="nav-logo">🎟️</span>
+          <span role="img" aria-label="Logo" className="nav-logo">
+            🎟️
+          </span>
         </div>
         <div className="vertical-nav-tabs">
           {/* SVG Icon Buttons for each domain */}
@@ -76,45 +77,29 @@ function MainContainer() {
         </div>
       </nav>
 
-      {/* Main Content + Notification/Action Button Cluster */}
+      {/* Main Content Area */}
       <div className="main-content-area">
-        {/* Top Header with Notification Center, AI Chatbot, and Dashboard */}
-        {/* 
-          Layout structure:
-          - Notification bell and Notification Center (left/top)
-          - AI Chatbot and Dashboard buttons clustered to the right/top-right on desktop, fixed to bottom on mobile
-          All buttons have dedicated containers and spacing, avoiding overlap on any device.
-        */}
-        <header className="main-header new-action-header">
-          <div className="header-title">
-            {/* Could add user avatar, time, etc, here */}
-            <span style={{ fontWeight: 700, fontSize: "1.22rem", letterSpacing: ".03em" }}>
-              Welcome to OmniTicket AI
-            </span>
+        {/* Professional sign-in bar & Notification Center below it */}
+        <div className="signin-ntf-bar">
+          <div className="signin-bar">
+            <button className="btn btn-large main-signin-btn">Sign In</button>
           </div>
-          {/* All action buttons/notifications grouped for visual clarity */}
-          <div className="header-action-group">
-            {/* Notification Center */}
-            <aside className="header-notification-center" aria-label="Notifications">
-              <div className="notification-bell" title="Notifications">🔔</div>
-              <div className="notification-center-placeholder">
-                Notification Center (Placeholder)
-              </div>
-            </aside>
-            {/* Dashboard Access Button (header-aligned, not floating) */}
-            <aside className="main-dashboard-access header-aligned">
-              <button className="dashboard-access-btn" tabIndex="0">
-                <span role="img" aria-label="Admin" style={{ marginRight: 7 }}>🛠️</span>
-                <span className="dashboard-btn-label">Dashboard</span>
-              </button>
-            </aside>
-          </div>
-        </header>
+          <aside className="main-notification-center" aria-label="Notifications">
+            <div className="notification-bell" title="Notifications">
+              🔔
+            </div>
+            <div className="main-notification-center-label">
+              Notification Center (Placeholder)
+            </div>
+          </aside>
+        </div>
 
-        {/* Universal Search - Card/Section */}
+        {/* Feature Cards: */}
         <section className="main-feature-card search-card">
           <div className="feature-card-header">
-            <span className="feature-card-icon" role="img" aria-label="Search">🔎</span>
+            <span className="feature-card-icon" role="img" aria-label="Search">
+              🔎
+            </span>
             <span className="feature-card-title">Universal Search</span>
           </div>
           <div className="feature-card-body main-search-bar-placeholder">
@@ -122,10 +107,11 @@ function MainContainer() {
           </div>
         </section>
 
-        {/* Personalized Recommendations - Card/Section */}
         <section className="main-feature-card recommendations-card">
           <div className="feature-card-header">
-            <span className="feature-card-icon" role="img" aria-label="Recommendations">🎯</span>
+            <span className="feature-card-icon" role="img" aria-label="Recommendations">
+              🎯
+            </span>
             <span className="feature-card-title">Personalized Recommendations</span>
           </div>
           <div className="feature-card-body recommendations-placeholder">
@@ -133,10 +119,11 @@ function MainContainer() {
           </div>
         </section>
 
-        {/* Booking Flow - Card/Section */}
         <section className="main-feature-card booking-card">
           <div className="feature-card-header">
-            <span className="feature-card-icon" role="img" aria-label="Booking">🎟️</span>
+            <span className="feature-card-icon" role="img" aria-label="Booking">
+              🎟️
+            </span>
             <span className="feature-card-title">Booking Flow</span>
           </div>
           <div className="feature-card-body booking-placeholder">
@@ -144,10 +131,11 @@ function MainContainer() {
           </div>
         </section>
 
-        {/* Interactive Seat Map - Card/Section */}
         <section className="main-feature-card seatmap-card">
           <div className="feature-card-header">
-            <span className="feature-card-icon" role="img" aria-label="Seat Map">🗺️</span>
+            <span className="feature-card-icon" role="img" aria-label="Seat Map">
+              🗺️
+            </span>
             <span className="feature-card-title">Interactive Seat Map</span>
           </div>
           <div className="feature-card-body seatmap-placeholder">
@@ -158,7 +146,9 @@ function MainContainer() {
       {/* Persistent Action Bar: AI Chatbot button fixed at bottom for both desktop and mobile */}
       <div className="persistent-fab-bar">
         <button className="chatbot-fab-btn" tabIndex="0">
-          <span role="img" aria-label="AI" style={{ fontSize: 21, verticalAlign: "middle" }}>🤖</span>
+          <span role="img" aria-label="AI" style={{ fontSize: 21, verticalAlign: "middle" }}>
+            🤖
+          </span>
           <span className="chatbot-btn-label">AI Chat</span>
         </button>
       </div>
