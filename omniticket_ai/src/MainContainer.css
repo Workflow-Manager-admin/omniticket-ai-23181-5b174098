@@ -27,7 +27,7 @@
 .main-container.vertical-layout {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(113deg, var(--background), var(--background-alt) 82%);
+  background: linear-gradient(113deg, var(--background), var(--background-alt) 90%);
   display: flex;
   flex-direction: row;
   align-items: stretch;
