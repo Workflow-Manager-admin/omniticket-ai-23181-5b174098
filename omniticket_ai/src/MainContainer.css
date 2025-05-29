@@ -1,12 +1,20 @@
 :root {
-  --primary: #4696d2;
-  --secondary: #F9AB00;
-  --accent: #34A853;
-  --surface: #ffffff;
-  --background: #f7f9fb;
-  --text-main: #13243c;
-  --text-muted: #547095;
-  --border-color: #e0ecfa;
+  --primary: #3772ff;
+  --secondary: #ffb630;
+  --accent: #43e97b;
+  --surface: #fff;
+  --surface-alt: #f8fafc;
+  --background: #f2f5fa;
+  --background-alt: #e9edf4;
+  --text-main: #1c2637;
+  --text-muted: #6b7da8;
+  --border-color: #d5e2f6;
+  --border-radius-xl: 22px;
+  --border-radius-lg: 18px;
+  --border-radius: 12px;
+  --shadow: 0 2px 20px 0 rgba(55,114,255,0.07), 0 1.5px 7px 0 rgba(67,233,123,0.10);
+  --font-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-head: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .main-container {
@@ -14,186 +22,227 @@
   width: 100vw;
   padding: 0;
   margin: 0;
-  background: var(--background);
+  background: linear-gradient(112deg, var(--background), var(--background-alt) 88%);
   display: flex;
   flex-direction: column;
   align-items: stretch;
   position: relative;
-  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-primary);
   color: var(--text-main);
+  transition: background 0.45s;
+  gap: 0;
 }
 
-/* Universal Search Bar */
+/* Universal Search Bar - Modern themed pill container */
 .main-search-bar-zone {
-  background: var(--primary);
-  padding: 18px 6vw 11px 6vw;
-  box-shadow: 0 2px 10px 0 rgba(70, 150, 210, 0.09);
+  background: linear-gradient(97deg, var(--primary) 88.4%, var(--accent) 112.6%);
+  padding: 24px 8vw 13px 8vw;
+  border-top-left-radius: var(--border-radius-xl);
+  border-top-right-radius: var(--border-radius-xl);
+  box-shadow: 0 3px 15px 0 rgba(55,114,255, 0.09);
+  margin-bottom: 0;
 }
 
 .main-search-bar-placeholder {
   color: #fff;
-  font-size: 1.14rem;
-  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.14);
-  padding: 12px 16px;
-  font-weight: 500;
-  letter-spacing: .01em;
-  box-shadow: 0 1px 3px 0 rgba(70,150,210,0.10);
+  font-size: 1.17rem;
+  font-family: var(--font-primary);
+  border-radius: var(--border-radius-lg);
+  background: rgba(255,255,255,0.18);
+  padding: 16px 22px;
+  font-weight: 600;
+  letter-spacing: 0.018em;
+  box-shadow: 0 1.5px 7px 0 rgba(55,114,255,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+  margin: 0 auto;
+  border: 2px solid #fff6;
 }
 
-/* Domain Tabs */
+/* Domain Tabs - more chromatic, round and modern */
 .main-domain-tabs-zone {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  background: var(--secondary);
-  padding: 8px 6vw;
-  border-bottom: 1.5px solid #ffeec2;
+  gap: 12px;
+  background: linear-gradient(102deg, #fff4df 75%, #fff 130%);
+  padding: 11px 7vw 7px 7vw;
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  border-bottom: 2px solid #ffeec2;
+  box-shadow: 0 2px 10px #ffeec235;
   overflow-x: auto;
-  min-height: 50px;
+  min-height: 52px;
 }
 
 .domain-tab {
-  color: var(--text-main);
-  background: #fff5db;
-  border-radius: 18px;
-  padding: 7px 18px;
-  font-weight: 700;
-  font-size: 1rem;
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  letter-spacing: .01em;
+  color: var(--primary);
+  background: #fff;
+  border-radius: 100px;
+  padding: 8px 22px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  font-family: var(--font-head);
+  letter-spacing: 0.012em;
   white-space: nowrap;
   border: 1.5px solid var(--secondary);
   cursor: pointer;
-  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 1px 8px #fff3;
+  transition: background 0.19s, color 0.19s, border 0.19s, box-shadow 0.17s;
+  margin-bottom: 2px;
 }
 .domain-tab:hover, .domain-tab:focus {
-  background: var(--accent);
+  background: var(--primary);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--primary);
+  box-shadow: 0 3px 20px #3772ff21;
+  outline: none;
 }
 
-/* Recommendations/Carousel */
+/* Recommendations/Carousel - more engaging, card-like */
 .main-recommendations-zone {
   background: var(--surface);
-  padding: 25px 6vw 12px 6vw;
-  min-height: 135px;
+  padding: 32px 8vw 24px 8vw;
+  min-height: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 .recommendations-placeholder {
-  background: #e8f3fa;
+  background: #f3f9ff;
   color: var(--primary);
-  padding: 22px 26px;
-  border-radius: 16px;
+  padding: 25px 38px;
+  border-radius: var(--border-radius-xl);
   text-align: center;
-  font-size: 1.10rem;
-  font-weight: 600;
-  box-shadow: 0 4px 18px 0 rgba(70,150,210,0.06);
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 30px 0 rgba(55,114,255,0.09);
+  font-family: var(--font-primary);
 }
 
-/* Booking/Seat Map zone */
+/* Booking/Seat Map zone - accent and soft drop */
 .main-booking-zone {
   flex: 1;
-  background: var(--background);
-  padding: 20px 6vw;
+  background: var(--surface-alt);
+  padding: 34px 11vw 30px 11vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow);
+  margin-bottom: 35px;
 }
 .booking-placeholder {
-  background: #f2fff5;
+  background: linear-gradient(96deg, #e5fff2 55%, #e4f7ff 100%);
   color: var(--accent);
-  padding: 22px 27px;
-  border-radius: 16px;
-  font-size: 1.06rem;
-  font-weight: 600;
-  box-shadow: 0 2px 10px 0 rgba(52,168,83,0.07);
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  padding: 29px 35px;
+  border-radius: var(--border-radius-lg);
+  font-size: 1.10rem;
+  font-weight: 700;
+  box-shadow: 0 2.5px 12px 0 rgba(67,233,123,0.10);
+  font-family: var(--font-primary);
 }
 
-/* Floating AI Chatbot */
+/* Floating AI Chatbot with glass button */
 .main-chatbot-fab {
   position: fixed;
-  right: 26px;
-  bottom: 22px;
+  right: 31px;
+  bottom: 27px;
   z-index: 1200;
 }
 .chatbot-fab-btn {
-  background-color: var(--accent);
+  background: linear-gradient(111deg, var(--primary) 59%, var(--accent) 100%);
   color: #fff;
   border: none;
   border-radius: 50px;
-  height: 50px;
-  min-width: 50px;
-  font-weight: 800;
-  font-size: 1.08rem;
+  height: 54px;
+  min-width: 54px;
+  font-weight: 900;
+  font-size: 1.07rem;
   display: flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 1px 10px rgba(34, 197, 94, 0.13);
+  gap: 10px;
+  box-shadow: 0 3px 18px #43e97b2a;
   cursor: pointer;
-  transition: background 0.17s;
-  padding: 0 18px;
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  transition: background 0.24s, box-shadow 0.17s;
+  padding: 0 20px;
+  font-family: var(--font-head);
+  letter-spacing: 0.019em;
+  border: 2px solid #fff3;
+  backdrop-filter: blur(3.5px);
 }
 .chatbot-fab-btn:hover, .chatbot-fab-btn:focus {
-  background: #48e389;
+  background: linear-gradient(113deg, var(--accent) 60%, var(--primary) 110%);
+  color: #fff;
+  box-shadow: 0 6px 28px #43e97b2f;
+  outline: none;
 }
 
-/* Notifications Center */
+/* Notifications Center - card styled and compact */
 .main-notification-center {
   position: fixed;
-  top: 22px;
-  right: 22px;
+  top: 26px;
+  right: 25px;
   display: flex;
   align-items: center;
   z-index: 1100;
   gap: 8px;
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 3px 14px 3px 9px;
+  box-shadow: 0 3px 14px #3772ff11;
+  border: 1.2px solid #eaf2ff;
 }
 
 .notification-bell {
   font-size: 1.25rem;
   margin-right: 4px;
+  color: var(--primary);
+  filter: drop-shadow(0px 1.8px 3px #69f0ae35);
 }
 
 .notification-center-placeholder {
   color: var(--primary);
-  font-size: 0.97rem;
-  background: #e9f4fa;
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-weight: 500;
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  font-size: 0.99rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+  background: none;
+  border-radius: 7px;
+  padding: 2.5px 5px;
+  letter-spacing: 0.01em;
 }
 
-/* Admin/Vendor Dashboard Access */
+/* Admin/Vendor Dashboard Access - detached soft pill */
 .main-dashboard-access {
   position: fixed;
-  top: 22px;
-  left: 20px;
+  top: 26px;
+  left: 26px;
   z-index: 1101;
 }
 .dashboard-access-btn {
-  background: var(--primary);
+  background: linear-gradient(94deg, var(--primary) 65%, #f7fafd 100%);
   color: #fff;
   border: none;
-  border-radius: 7px;
-  font-weight: 700;
+  border-radius: 8.5px;
+  font-weight: 900;
   font-size: 0.98rem;
-  padding: 7px 14px;
-  box-shadow: 0 1px 6px rgba(70, 150, 210, 0.10);
+  padding: 9px 18px;
+  box-shadow: 0 2.2px 10px #3772ff17;
   cursor: pointer;
-  transition: background 0.14s;
-  font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  letter-spacing: .01em;
+  transition: background 0.17s, box-shadow 0.12s;
+  font-family: var(--font-head);
+  letter-spacing: .015em;
+  border: 2px solid #fff3;
 }
 .dashboard-access-btn:hover, .dashboard-access-btn:focus {
-  background: #2874b4;
+  background: linear-gradient(110deg, var(--accent) 66%, var(--primary) 110%);
+  color: #fff;
+  box-shadow: 0 6px 16px #43e97b18;
+  outline: none;
 }
 
 /* -- Mobile-First & Responsive -- */
@@ -202,30 +251,46 @@
   .main-domain-tabs-zone,
   .main-recommendations-zone,
   .main-booking-zone {
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    border-radius: var(--border-radius);
   }
   .main-recommendations-zone {
-    padding-top: 12px;
-    padding-bottom: 8px;
-    min-height: 70px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    min-height: 75px;
+    margin-top: 7px;
+    margin-bottom: 10px;
   }
   .main-booking-zone {
-    padding-top: 8px;
-    padding-bottom: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-bottom: 23px;
+    border-radius: var(--border-radius);
   }
   .recommendations-placeholder, .booking-placeholder {
-    padding: 12px;
-    font-size: 0.98rem;
+    padding: 11px 10px;
+    font-size: 0.99rem;
+    border-radius: var(--border-radius);
   }
-  .main-dashboard-access, .main-notification-center {
-    top: 10px;
-    left: 8px;
-    right: 8px;
+  .main-dashboard-access,
+  .main-notification-center {
+    top: 8px;
+    left: 5px;
+    right: 5px;
+    padding: 2px 7px;
+    border-radius: var(--border-radius);
   }
   .main-chatbot-fab {
-    right: 10px;
-    bottom: 11px;
+    right: 8px;
+    bottom: 10px;
+  }
+  .chatbot-fab-btn {
+    padding: 0 13px;
+    font-size: 0.99rem;
+    min-width: 41px;
+    height: 42px;
+    border-radius: 25px;
   }
 }
 
