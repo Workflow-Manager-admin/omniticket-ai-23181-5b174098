@@ -101,14 +101,7 @@ function MainContainer() {
                 Notification Center (Placeholder)
               </div>
             </aside>
-            {/* Floating AI Chatbot Button (moves to floating on mobile) */}
-            <aside className="main-chatbot-fab header-aligned">
-              <button className="chatbot-fab-btn" tabIndex="0">
-                <span role="img" aria-label="AI" style={{ fontSize: 23, verticalAlign: "middle" }}>🤖</span>
-                <span className="chatbot-btn-label">AI Chat</span>
-              </button>
-            </aside>
-            {/* Dashboard Access Button (moves to floating on mobile) */}
+            {/* Dashboard Access Button (header-aligned, not floating) */}
             <aside className="main-dashboard-access header-aligned">
               <button className="dashboard-access-btn" tabIndex="0">
                 <span role="img" aria-label="Admin" style={{ marginRight: 7 }}>🛠️</span>
@@ -140,17 +133,11 @@ function MainContainer() {
           </div>
         </section>
       </div>
-      {/* On mobile: AI Chatbot and Dashboard become fixed/floating at bottom.
-          This fallback placement ensures no overlaps and good accessibility.
-      */}
-      <div className="fixed-mobile-action-bar">
+      {/* Persistent Action Bar: AI Chatbot button fixed at bottom for both desktop and mobile */}
+      <div className="persistent-fab-bar">
         <button className="chatbot-fab-btn" tabIndex="0">
           <span role="img" aria-label="AI" style={{ fontSize: 21, verticalAlign: "middle" }}>🤖</span>
           <span className="chatbot-btn-label">AI Chat</span>
-        </button>
-        <button className="dashboard-access-btn" tabIndex="0">
-          <span role="img" aria-label="Admin" style={{ marginRight: 7 }}>🛠️</span>
-          <span className="dashboard-btn-label">Dashboard</span>
         </button>
       </div>
     </div>
