@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/omniticket-ai-23181-5b174098/omniticket_ai"
+}
