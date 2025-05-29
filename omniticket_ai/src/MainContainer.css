@@ -466,3 +466,121 @@
 }
 
 /* ... the rest of the styles remain unchanged ... */
+
+/* ---------- FEATURE CARD LAYOUT FOR MAIN CONTENT ---------- */
+.main-feature-card {
+  background: var(--surface);
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 6px 36px 0 #bedefb23, 0 1.5px 7px 0 #34A85317;
+  padding: 0 0 24px 0;
+  margin: 32px auto 0 auto;
+  max-width: 850px;
+  min-width: 0;
+  width: 93%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  border: 1.7px solid var(--border-color);
+  transition: box-shadow 0.21s, border 0.15s, background 0.18s;
+}
+
+.main-feature-card:first-of-type {
+  margin-top: 33px;
+}
+
+.feature-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 36px 7px 34px;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.27rem;
+  letter-spacing: .02em;
+  color: var(--primary);
+  background: none;
+  box-shadow: none;
+}
+
+.feature-card-icon {
+  font-size: 2.01rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card-title {
+  font-size: 1.18em;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.feature-card-body {
+  font-size: 1.10rem;
+  padding: 8px 36px 0 34px;
+  color: var(--text-main);
+  line-height: 1.58;
+  font-family: var(--font-primary);
+}
+
+/* Distinct accent colors for each major card */
+.search-card {
+  border-left: 6px solid var(--primary);
+}
+.recommendations-card {
+  border-left: 6px solid var(--accent);
+}
+.booking-card {
+  border-left: 6px solid var(--secondary);
+}
+.seatmap-card {
+  border-left: 6px solid #a68cf9;
+}
+
+@media (max-width: 900px) {
+  .main-feature-card {
+    max-width: 98vw;
+    width: 99%;
+    margin-top: 19px;
+    border-radius: var(--border-radius-lg);
+    padding-bottom: 18px;
+  }
+  .feature-card-header, .feature-card-body {
+    padding-left: 18px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-feature-card {
+    box-shadow: 0 2.5px 14px #bedefb48;
+    border-radius: var(--border-radius);
+    margin-top: 11px;
+    padding-bottom: 13px;
+  }
+  .feature-card-header, .feature-card-body {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  .feature-card-header {
+    font-size: 1.01rem;
+    gap: 8px;
+    padding-top: 14px;
+    padding-bottom: 1px;
+  }
+}
+
+/* Dividers between cards for a clear visual break */
+.main-feature-card:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+/* Prevent content overlap with the persistent Fab Bar on mobile */
+@media (max-width: 700px) {
+  .main-content-area {
+    padding-bottom: 85px;
+  }
+}
