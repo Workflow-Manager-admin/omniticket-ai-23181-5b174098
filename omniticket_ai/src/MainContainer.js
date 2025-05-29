@@ -111,25 +111,47 @@ function MainContainer() {
           </div>
         </header>
 
-        {/* Universal Search Bar */}
-        <section className="main-search-bar-zone">
-          <div className="main-search-bar-placeholder">
-            <span role="img" aria-label="Search" style={{ marginRight: 7 }}>🔎</span>
-            Universal Search (Placeholder)
+        {/* Universal Search - Card/Section */}
+        <section className="main-feature-card search-card">
+          <div className="feature-card-header">
+            <span className="feature-card-icon" role="img" aria-label="Search">🔎</span>
+            <span className="feature-card-title">Universal Search</span>
+          </div>
+          <div className="feature-card-body main-search-bar-placeholder">
+            Search for sports, movies, travel, events, and more.
           </div>
         </section>
 
-        {/* Recommendations/Carousel */}
-        <section className="main-recommendations-zone">
-          <div className="recommendations-placeholder">
-            🎯 Personalized Recommendations / Carousels (Placeholder)
+        {/* Personalized Recommendations - Card/Section */}
+        <section className="main-feature-card recommendations-card">
+          <div className="feature-card-header">
+            <span className="feature-card-icon" role="img" aria-label="Recommendations">🎯</span>
+            <span className="feature-card-title">Personalized Recommendations</span>
+          </div>
+          <div className="feature-card-body recommendations-placeholder">
+            Enjoy smart, AI-powered suggestions and event carousels.
           </div>
         </section>
 
-        {/* Booking/Seat Map/AR/VR */}
-        <section className="main-booking-zone">
-          <div className="booking-placeholder">
-            🗺️ Booking Flow & Interactive Seat Map (AR/VR Preview Placeholder)
+        {/* Booking Flow - Card/Section */}
+        <section className="main-feature-card booking-card">
+          <div className="feature-card-header">
+            <span className="feature-card-icon" role="img" aria-label="Booking">🎟️</span>
+            <span className="feature-card-title">Booking Flow</span>
+          </div>
+          <div className="feature-card-body booking-placeholder">
+            Reserve tickets, select combo bundles, and proceed through our streamlined checkout experience.
+          </div>
+        </section>
+
+        {/* Interactive Seat Map - Card/Section */}
+        <section className="main-feature-card seatmap-card">
+          <div className="feature-card-header">
+            <span className="feature-card-icon" role="img" aria-label="Seat Map">🗺️</span>
+            <span className="feature-card-title">Interactive Seat Map</span>
+          </div>
+          <div className="feature-card-body seatmap-placeholder">
+            Explore real-time seat availability (with AR/VR previews) and immersive selection tools.
           </div>
         </section>
       </div>
