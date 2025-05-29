@@ -84,12 +84,21 @@ function MainContainer() {
           <div className="signin-bar">
             <button className="btn btn-large main-signin-btn">Sign In</button>
           </div>
+          {/* Distinct Notification Center Card - visually catchy, refined for a modern professional look */}
           <aside className="main-notification-center" aria-label="Notifications">
-            <div className="notification-bell" title="Notifications">
-              🔔
+            <div className="notification-bell" title="Notifications" tabIndex="0" role="button" aria-label="Open notifications">
+              {/* Modern bell icon, high contrast */}
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true" style={{marginBottom: -1}}>
+                <path d="M10.5 2.75c-3.031 0-5.221 2.151-5.221 5.319v2.833c0 .446-.169 1.025-.377 1.384L3.09 14.3c-.393.661-.052 1.2.747 1.2h13.326c.8 0 1.14-.539.747-1.2l-1.813-2.014c-.208-.36-.377-.938-.377-1.384v-2.833C15.721 4.9 13.532 2.75 10.5 2.75Z" stroke="#F9AB00" strokeWidth="1.5" fill="#fff"/>
+                <circle cx="16.5" cy="6.5" r="2" fill="#F9AB00" stroke="#fff" strokeWidth="1"/>
+                <path d="M8.3 17.5c.553.604 1.201.9 1.714.9.513 0 1.16-.296 1.714-.9" stroke="#4696d2" strokeWidth="1.2" fill="none"/>
+              </svg>
             </div>
-            <div className="main-notification-center-label">
-              Notification Center (Placeholder)
+            <div className="main-notification-center-label" title="All your notifications in one place.">
+              <strong>Notification Center</strong>&nbsp;
+              <span style={{color: "#7a8faa", fontWeight: 400}}>
+                You’re all caught up! (No new notifications)
+              </span>
             </div>
           </aside>
         </div>
