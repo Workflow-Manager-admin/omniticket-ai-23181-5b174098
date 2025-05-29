@@ -1,18 +1,18 @@
 :root {
-  --primary: #4696d2;
-  --secondary: #F9AB00;
-  --accent: #34A853;
-  --surface: #ffffff;
-  --background: #e7f0fa;
-  --background-alt: #e0e6ed;
-  --text-main: #203047;
-  --text-color: #203047;
-  --text-secondary: #7a8faa;
-  --border-color: #cbd9ea;
+  --primary: #FF7600; /* Vibrant Orange (primary accent) */
+  --secondary: #131313; /* Deep Black (main backgrounds, nav, cards) */
+  --accent: #FFA040; /* Lighter orange for secondary highlights */
+  --surface: #181818; /* Very dark near-black for cards/sections */
+  --background: #101010; /* App background */
+  --background-alt: #191919;
+  --text-main: #FFFDF8; /* High contrast off-white */
+  --text-color: #FFFDF8;
+  --text-secondary: #FFB067CC;
+  --border-color: #261300; /* Orange-black border */
   --border-radius-xl: 22px;
   --border-radius-lg: 16px;
   --border-radius: 10px;
-  --shadow: 0 2px 20px 0 rgba(70,150,210,0.07), 0 1.5px 6px 0 rgba(52,168,83,0.07);
+  --shadow: 0 2px 20px 0 #ff760025, 0 1.5px 6px 0 #1116;
   --font-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-headings: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
