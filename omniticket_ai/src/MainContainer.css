@@ -110,22 +110,7 @@
   width: 28px;
   height: 28px;
   margin: 0 auto;
-}
-
-/* New: Style for navigation img icons */
-.vertical-nav-btn .nav-img {
-  object-fit: contain;
-  width: 28px;
-  height: 28px;
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  box-shadow: 0 2.5px 10px #bfe2fe3d;
-  background: transparent;
-  display: block;
-  transition: box-shadow 0.14s, filter 0.20s, transform 0.14s;
-  /* To avoid accidental selection/drag */
-  user-select: none;
-  pointer-events: none;
+  /* Remove unnecessary img styles, ensure SVG fills space and is crisp */
 }
 
 .vertical-nav-btn .nav-label {
