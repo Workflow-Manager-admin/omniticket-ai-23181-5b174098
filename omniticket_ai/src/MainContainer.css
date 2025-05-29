@@ -280,6 +280,158 @@
   top: 0;
   z-index: 510;
 }
+/* --- BEGIN: Button Alignment Cluster --- */
+.new-action-header {
+  /* Ensures children do not overlap, improves mobile stacking */
+  flex-wrap: wrap;
+}
+
+/* Group action area for notifications/AI/Dashboard */
+.header-action-group {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-shrink: 0;
+}
+
+/* Header notification center always at start of group */
+.header-notification-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 110px;
+  min-height: 35px;
+  margin-right: 9px;
+  gap: 2.5px;
+}
+
+/* Notification bell icon styling */
+.notification-bell {
+  font-size: 1.45rem;
+  color: var(--secondary);
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.notification-bell:hover,
+.notification-bell:focus {
+  color: var(--primary);
+}
+
+.notification-center-placeholder {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1.16;
+  white-space: nowrap;
+}
+
+/* AI Chatbot FAB button styling */
+.main-chatbot-fab.header-aligned,
+.main-dashboard-access.header-aligned {
+  /* Buttons in header, not floating. Reset position. */
+  position: static !important;
+  margin: 0 0 0 0 !important;
+  z-index: auto !important;
+}
+
+.chatbot-fab-btn, .dashboard-access-btn {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(95deg, var(--primary) 68%, var(--accent) 110%);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  padding: 9px 22px;
+  font-size: 1.07rem;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 0;
+  box-shadow: 0 2px 10px #4a96d225;
+  transition: background 0.17s, box-shadow 0.17s, color 0.15s;
+  min-height: 37px;
+  min-width: 90px;
+  gap: 9px;
+  outline: none;
+  position: relative;
+  z-index: 4;
+}
+.chatbot-fab-btn:hover, .chatbot-fab-btn:focus,
+.dashboard-access-btn:hover, .dashboard-access-btn:focus {
+  background: linear-gradient(109deg, var(--primary) 80%, var(--secondary) 110%);
+  color: #fff;
+  box-shadow: 0 4px 18px #34A85317;
+}
+.dashboard-access-btn {
+  background: linear-gradient(94deg, var(--secondary) 50%, var(--primary) 110%);
+}
+
+.chatbot-btn-label, .dashboard-btn-label {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-left: 3px;
+  margin-right: 0px;
+}
+
+@media (max-width: 1100px) {
+  .header-action-group {
+    gap: 13px;
+  }
+  .chatbot-fab-btn, .dashboard-access-btn {
+    padding: 7px 12px;
+    font-size: 0.98rem;
+    min-width: 66px;
+  }
+  .header-notification-center {
+    min-width: 88px;
+    font-size: .84rem;
+  }
+}
+@media (max-width: 700px) {
+  /* Mobile: move AI Chat/DB buttons to fixed bottom bar, cluster them horizontally.
+     Notification bell stays up top in the header (as possible). */
+  .main-header.new-action-header .header-action-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .main-chatbot-fab.header-aligned, .main-dashboard-access.header-aligned {
+    display: none !important;
+  }
+  .fixed-mobile-action-bar {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    background: var(--surface);
+    border-top: 2px solid var(--border-color);
+    box-shadow: 0 -4px 16px #60b0f041;
+    z-index: 10008;
+    gap: 18px;
+    padding: 11px 0 11px 0;
+  }
+  .fixed-mobile-action-bar .chatbot-fab-btn, 
+  .fixed-mobile-action-bar .dashboard-access-btn {
+    border-radius: 13px;
+    font-size: 1.01rem;
+    padding: 9px 13px;
+    margin: 0 0 0 0;
+    min-height: 36px;
+    min-width: 80px;
+  }
+}
+@media (min-width: 701px) {
+  .fixed-mobile-action-bar {
+    display: none !important;
+  }
+}
+
 .header-title {
   display: flex;
   align-items: center;
