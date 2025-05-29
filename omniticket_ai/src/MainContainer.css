@@ -390,9 +390,36 @@
     font-size: .84rem;
   }
 }
+/* --- PERSISTENT AI CHATBOT FAB BAR --- */
+.persistent-fab-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  background: var(--surface);
+  border-top: 2px solid var(--border-color);
+  box-shadow: 0 -4px 16px #60b0f041;
+  z-index: 10008;
+  gap: 20px;
+  padding: 12px 28px 16px 0;
+  pointer-events: none; /* Make the bar transparent for clicks, but enable on its children */
+}
+.persistent-fab-bar .chatbot-fab-btn {
+  pointer-events: all;
+  border-radius: 17px;
+  font-size: 1.07rem;
+  padding: 12px 27px;
+  margin: 0 11px 0 0;
+  min-height: 44px;
+  min-width: 95px;
+  box-shadow: 0 4px 24px #4a96d234;
+}
+
+/* Responsive: Center the FAB on mobile, tighten paddings */
 @media (max-width: 700px) {
-  /* Mobile: move AI Chat/DB buttons to fixed bottom bar, cluster them horizontally.
-     Notification bell stays up top in the header (as possible). */
   .main-header.new-action-header .header-action-group {
     display: flex;
     align-items: center;
@@ -401,35 +428,35 @@
   .main-chatbot-fab.header-aligned, .main-dashboard-access.header-aligned {
     display: none !important;
   }
-  .fixed-mobile-action-bar {
-    display: flex !important;
-    flex-direction: row;
+  .persistent-fab-bar {
     justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    width: 100vw;
-    background: var(--surface);
-    border-top: 2px solid var(--border-color);
-    box-shadow: 0 -4px 16px #60b0f041;
-    z-index: 10008;
-    gap: 18px;
-    padding: 11px 0 11px 0;
+    padding: 10px 0 17px 0;
+    gap: 0;
   }
-  .fixed-mobile-action-bar .chatbot-fab-btn, 
-  .fixed-mobile-action-bar .dashboard-access-btn {
-    border-radius: 13px;
-    font-size: 1.01rem;
-    padding: 9px 13px;
-    margin: 0 0 0 0;
-    min-height: 36px;
-    min-width: 80px;
+  .persistent-fab-bar .chatbot-fab-btn {
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 10px 18px;
+    margin: 0;
+    min-height: 39px;
+    min-width: 94px;
+    box-shadow: 0 2.5px 14px #34A8531c;
   }
 }
+
 @media (min-width: 701px) {
-  .fixed-mobile-action-bar {
-    display: none !important;
+  .persistent-fab-bar {
+    justify-content: flex-end;
+    padding: 12px 34px 22px 0;
   }
+  .persistent-fab-bar .chatbot-fab-btn {
+    font-size: 1.09rem;
+  }
+}
+
+/* Hide the old floating/fixed-mobile-action-bar if present (legacy) */
+.fixed-mobile-action-bar {
+  display: none !important;
 }
 
 .header-title {
