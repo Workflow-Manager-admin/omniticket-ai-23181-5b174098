@@ -76,22 +76,46 @@ function MainContainer() {
         </div>
       </nav>
 
-      {/* Main Content + Notification Header */}
+      {/* Main Content + Notification/Action Button Cluster */}
       <div className="main-content-area">
-        {/* Top Header with Notification Center */}
-        <header className="main-header">
+        {/* Top Header with Notification Center, AI Chatbot, and Dashboard */}
+        {/* 
+          Layout structure:
+          - Notification bell and Notification Center (left/top)
+          - AI Chatbot and Dashboard buttons clustered to the right/top-right on desktop, fixed to bottom on mobile
+          All buttons have dedicated containers and spacing, avoiding overlap on any device.
+        */}
+        <header className="main-header new-action-header">
           <div className="header-title">
             {/* Could add user avatar, time, etc, here */}
             <span style={{ fontWeight: 700, fontSize: "1.22rem", letterSpacing: ".03em" }}>
               Welcome to OmniTicket AI
             </span>
           </div>
-          <aside className="header-notification-center" aria-label="Notifications">
-            <div className="notification-bell" title="Notifications">🔔</div>
-            <div className="notification-center-placeholder">
-              Notification Center (Placeholder)
-            </div>
-          </aside>
+          {/* All action buttons/notifications grouped for visual clarity */}
+          <div className="header-action-group">
+            {/* Notification Center */}
+            <aside className="header-notification-center" aria-label="Notifications">
+              <div className="notification-bell" title="Notifications">🔔</div>
+              <div className="notification-center-placeholder">
+                Notification Center (Placeholder)
+              </div>
+            </aside>
+            {/* Floating AI Chatbot Button (moves to floating on mobile) */}
+            <aside className="main-chatbot-fab header-aligned">
+              <button className="chatbot-fab-btn" tabIndex="0">
+                <span role="img" aria-label="AI" style={{ fontSize: 23, verticalAlign: "middle" }}>🤖</span>
+                <span className="chatbot-btn-label">AI Chat</span>
+              </button>
+            </aside>
+            {/* Dashboard Access Button (moves to floating on mobile) */}
+            <aside className="main-dashboard-access header-aligned">
+              <button className="dashboard-access-btn" tabIndex="0">
+                <span role="img" aria-label="Admin" style={{ marginRight: 7 }}>🛠️</span>
+                <span className="dashboard-btn-label">Dashboard</span>
+              </button>
+            </aside>
+          </div>
         </header>
 
         {/* Universal Search Bar */}
@@ -116,22 +140,19 @@ function MainContainer() {
           </div>
         </section>
       </div>
-
-      {/* Floating AI Chatbot */}
-      <aside className="main-chatbot-fab">
-        <button className="chatbot-fab-btn">
-          <span role="img" aria-label="AI" style={{ fontSize: 23, verticalAlign: "middle" }}>🤖</span>
-          <span style={{ fontWeight: 700, letterSpacing: 0.5, marginLeft: 8 }}>AI Chat</span>
+      {/* On mobile: AI Chatbot and Dashboard become fixed/floating at bottom.
+          This fallback placement ensures no overlaps and good accessibility.
+      */}
+      <div className="fixed-mobile-action-bar">
+        <button className="chatbot-fab-btn" tabIndex="0">
+          <span role="img" aria-label="AI" style={{ fontSize: 21, verticalAlign: "middle" }}>🤖</span>
+          <span className="chatbot-btn-label">AI Chat</span>
         </button>
-      </aside>
-
-      {/* Admin/Vendor Dashboard Access */}
-      <aside className="main-dashboard-access">
-        <button className="dashboard-access-btn">
+        <button className="dashboard-access-btn" tabIndex="0">
           <span role="img" aria-label="Admin" style={{ marginRight: 7 }}>🛠️</span>
-          Admin/Vendor Dashboard
+          <span className="dashboard-btn-label">Dashboard</span>
         </button>
-      </aside>
+      </div>
     </div>
   );
 }
