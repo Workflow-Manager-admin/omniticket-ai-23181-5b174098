@@ -81,13 +81,14 @@ function MainContainer() {
       <div className="main-content-area">
         {/* Professional sign-in bar & Notification Center below it */}
         <div className="signin-ntf-bar">
+          {/* Sign In Button Bar */}
           <div className="signin-bar">
             <button className="btn btn-large main-signin-btn">Sign In</button>
           </div>
-          {/* Distinct Notification Center Card - visually catchy, refined for a modern professional look */}
-          <aside className="main-notification-center" aria-label="Notifications">
+          {/* Notification Center: Modern, visually-distinct card immediately below Sign In */}
+          <aside className="main-notification-center" aria-label="Notifications" tabIndex="0" role="region">
             <div className="notification-bell" title="Notifications" tabIndex="0" role="button" aria-label="Open notifications">
-              {/* Modern bell icon, high contrast */}
+              {/* Modern SVG bell icon */}
               <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true" style={{marginBottom: -1}}>
                 <path d="M10.5 2.75c-3.031 0-5.221 2.151-5.221 5.319v2.833c0 .446-.169 1.025-.377 1.384L3.09 14.3c-.393.661-.052 1.2.747 1.2h13.326c.8 0 1.14-.539.747-1.2l-1.813-2.014c-.208-.36-.377-.938-.377-1.384v-2.833C15.721 4.9 13.532 2.75 10.5 2.75Z" stroke="#F9AB00" strokeWidth="1.5" fill="#fff"/>
                 <circle cx="16.5" cy="6.5" r="2" fill="#F9AB00" stroke="#fff" strokeWidth="1"/>
@@ -95,8 +96,8 @@ function MainContainer() {
               </svg>
             </div>
             <div className="main-notification-center-label" title="All your notifications in one place.">
-              <strong>Notification Center</strong>&nbsp;
-              <span style={{color: "#7a8faa", fontWeight: 400}}>
+              <strong>Notification Center</strong>
+              <span style={{marginLeft: 8, color: "#7a8faa", fontWeight: 400, fontSize: '0.99em'}}>
                 You’re all caught up! (No new notifications)
               </span>
             </div>
