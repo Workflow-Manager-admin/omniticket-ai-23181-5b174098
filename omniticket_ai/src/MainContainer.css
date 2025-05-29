@@ -5,6 +5,8 @@
   --surface: #ffffff;
   --background: #f7f9fb;
   --text-main: #13243c;
+  --text-muted: #547095;
+  --border-color: #e0ecfa;
 }
 
 .main-container {
@@ -17,7 +19,8 @@
   flex-direction: column;
   align-items: stretch;
   position: relative;
-  font-family: 'Inter', 'Roboto', 'Helvetica', Arial, sans-serif;
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-main);
 }
 
 /* Universal Search Bar */
