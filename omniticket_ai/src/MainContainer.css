@@ -641,52 +641,69 @@
   }
 }
 
-/* Notification center below sign-in */
+/* Notification center below sign-in - Enhanced Card Look */
 .main-notification-center {
   width: 100%;
-  background: linear-gradient(90deg, var(--surface-alt) 66%, #ecf6fd 100%);
+  background: linear-gradient(90deg, var(--surface-alt) 72%, #ecf6fd 100%);
   border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
-  box-shadow: 0 4px 28px #bedefb18, 0 0.5px 10px #e7f0fa99;
+  box-shadow: 0 4.5px 32px 1px #bedefb25, 0 0.5px 13px #e7f0fa54;
   border: 1.7px solid var(--border-color);
   border-top: none;
-  min-height: 52px;
+  min-height: 56px;
   font-family: var(--font-primary);
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 16px 36px 15px 30px;
-  font-size: 1.12rem;
+  gap: 20px;
+  padding: 18px 38px 17px 32px;
+  font-size: 1.14rem;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  position: relative;
+  z-index: 1;
   transition: box-shadow 0.18s, background 0.18s;
-  /* visually hover/clickable for notifications */
   cursor: pointer;
+  /* Add a subtle border and shadow for professional separation */
 }
+
+.main-notification-center:focus,
+.main-notification-center:active {
+  outline: 2px solid var(--primary);
+  outline-offset: 1.5px;
+}
+
 .main-notification-center:hover, .main-notification-center:focus-within {
-  box-shadow: 0 6px 30px #f9ab0044, 0 0.5px 10px #e7f0fa99;
-  background: linear-gradient(90deg, #fefefe 40%, #f9fabe 160%);
+  box-shadow: 0 8px 34px #f9ab0044, 0 1.5px 13px #e7f0fa99;
+  background: linear-gradient(90deg, #fefefe 34%, #f9fabe 120%);
 }
+
 .main-notification-center .notification-bell {
-  font-size: 1.25rem;
+  font-size: 1.27rem;
   color: var(--secondary);
-  margin: 0 11px 0 2px;
+  margin: 0 15px 0 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #f9ab0014;
-  padding: 5px 6px 3px 5px;
-  box-shadow: 0 2px 6px #f9ab0022;
-  border: 1.5px solid #fffbe4;
+  background: #f9ab0018;
+  padding: 7px 7.5px 4px 7px;
+  box-shadow: 0 3px 10px #f9ab001b;
+  border: 1.7px solid #fffbe6;
   transition: background 0.18s, color 0.19s, box-shadow 0.14s;
 }
-.main-notification-center .notification-bell:active {
-  background: #f9ab0032;
+.main-notification-center .notification-bell:active,
+.main-notification-center .notification-bell:focus {
+  background: #f9ab0042;
+  color: var(--primary);
+  outline: none;
+  border-color: var(--primary);
 }
+
 .main-notification-center-label {
   color: var(--text-main);
   letter-spacing: 0.012em;
   font-family: var(--font-primary);
-  font-size: 1.09em;
-  opacity: 0.97;
+  font-size: 1.11em;
+  opacity: 0.98;
   font-weight: 600;
   /* text-overflow for modern polish */
   overflow: hidden;
@@ -695,6 +712,48 @@
   flex: 1;
   display: flex;
   align-items: center;
+  /* Add extra margin to label for spacing */
+  margin-left: 2px;
+}
+
+/* For better spacing between sign-in bar, notification center, and feature cards */
+.signin-ntf-bar {
+  margin-bottom: 36px;
+  gap: 0;
+}
+
+.signin-bar {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .main-notification-center {
+    padding: 10px 9px 10px 11px;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    font-size: 0.97rem;
+    min-height: 44px;
+    gap: 13px;
+  }
+  .signin-ntf-bar {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-notification-center {
+    padding: 6px 2vw 8px 2.5vw;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    font-size: 0.91rem;
+    min-height: 30px;
+    gap: 7px;
+  }
+  .main-notification-center .notification-bell {
+    margin-right: 3.5px;
+    padding: 5px 6px 2px 5px;
+  }
+  .signin-ntf-bar {
+    margin-bottom: 11px;
+  }
 }
 @media (max-width: 900px) {
   .main-notification-center {
